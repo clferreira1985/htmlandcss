@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Câmbio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center p-3">
+        <h1>Conversor de Câmbio</h1>
+    </header>
+
+    <main class="container my-5">
+        <section class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="exchangeForm">
+                    <div class="form-group">
+                        <label for="currencyFrom">De:</label>
+                        <select class="form-control" id="currencyFrom" required>
+                            <option value="USD">Dólar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="BRL">Real (BRL)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="currencyTo">Para:</label>
+                        <select class="form-control" id="currencyTo" required>
+                            <option value="BRL">Real (BRL)</option>
+                            <option value="USD">Dólar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Valor:</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Insira o valor" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Converter</button>
+                </form>
+                <div class="result mt-4">
+                    <h4 id="resultText"></h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; 2024 Conversor de Câmbio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Simulando conversão de câmbio com valores fixos (para fins de exemplo)
+        const exchangeRates = {
+            USD: { BRL: 5.0, EUR: 0.85 },
+            EUR: { BRL: 6.0, USD: 1.18 },
+            BRL: { USD: 0.2, EUR: 0.17 }
+        };
+
+       
